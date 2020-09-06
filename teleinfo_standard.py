@@ -100,13 +100,28 @@ def keys_from_file(file):
     return labels
 
 
+def dico_from_file(file):
+    information = {}
+    with open(file) as f:
+        for line in f:
+            line = line.replace("\n","")
+            decoupage = line.split("\t")
+            k = int(decoupage[0])
+            v = decoupage[1]
+            information[k] = v
+    return information
+
+
 def main():
     with serial.Serial(port='/dev/ttyAMA0', baudrate=9600, parity=serial.PARITY_ODD, bytesize=serial.SEVENBITS, timeout=1) as ser:
         # stopbits=serial.STOPBITS_ONE, 
         logging.info("Teleinfo is reading on /dev/ttyAMA0..")
         logging.info("Mode standard")
     
-        labels_linky = keys_from_file("/opt/teleinfo-linky-with-raspberry/available_linky_standard_keys.txt")
+        labels_linky = keys_from_file("/opt/teleinfo-linky-with-raspberry/liste_champs_mode_standard.txt")
+        liste_fabriquants = dico_from_file("/opt/teleinfo-linky-with-raspberry/liste_fabriquants_linky.txt")
+        #liste_modeles = keys_from_file("/opt/teleinfo-linky-with-raspberry/modeles_linky.txt")
+        
         trame = dict()
 
         # boucle pour partir sur un début de trame
@@ -119,7 +134,6 @@ def main():
 
         while True:
             #logging.debug(line)
-            line = line.replace(b'\x08',b'\t') # remplacement des backspaces inopinés par de tabulations
             line_str = line.decode("utf-8")
             ar = line_str.split("\t") # separation sur tabulation
 
@@ -146,13 +160,19 @@ def main():
 
                 if b'\x03' in line:  # si caractère de fin de trame, on insère la trame dans influx
                     time_measure = time.time()
+                    
+                    # ajout nom fabriquant
+                    numero_compteur = str(trame['ADSC'])
+                    id_fabriquant = int(numero_compteur[2:4])
+                    trame['OEM'] = liste_fabriquants[id_fabriquant]
+                    
+                    # ajout timestamp pour debugger
+                    trame["timestamp"] = int(time_measure)
 
                     # insertion dans influxdb
                     add_measures(trame, time_measure)
 
-                    # ajout timestamp pour debugger
-                    trame["timestamp"] = int(time_measure)
-                    #logging.debug(trame)
+                   #logging.debug(trame)
 
                     trame = dict()  # on repart sur une nouvelle trame
             except Exception as e:

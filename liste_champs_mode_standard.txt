@@ -1,0 +1,71 @@
+Adresse Secondaire du Compteur	ADSC	12	Sans
+Version de lATIC	VTIC	2	Sans
+Date et heure courante	DATE	0	Sans
+Nom du calendrier tarifaire fournisseur	NGTF	16	Sans
+Libellé tarif fournisseur en cours	LTARF	16	Sans
+Energie active soutirée totale	EAST	9	Wh
+Energie active soutirée Fournisseur, index 01	EASF01	9	Wh
+Energie active soutirée Fournisseur, index 02	EASF02	9	Wh
+Energie active soutirée Fournisseur, index 03	EASF03	9	Wh
+Energie active soutirée Fournisseur, index 04	EASF04	9	Wh
+Energie active soutirée Fournisseur, index 05	EASF05	9	Wh
+Energie active soutirée Fournisseur, index 07	EASF07	9	Wh
+Energie active soutirée Fournisseur, index 06	EASF06	9	Wh
+Energie active soutirée Fournisseur, index 08	EASF08	9	Wh
+Energie active soutirée Fournisseur, index 09	EASF09	9	Wh
+Energie active soutirée Fournisseur, index 10	EASF10	9	Wh
+Energie active soutirée Distributeur, index 01	EASD01	9	Wh
+Energie active soutirée Distributeur, index 02	EASD02	9	Wh
+Energie active soutirée Distributeur, index 03	EASD03	9	Wh
+Energie active soutirée Distributeur, index 04	EASD04	9	Wh
+Energie active injectée totale	EAIT	9	Wh
+Energie réactive Q1 totale	ERQ1	9	VArh
+Energie réactive Q2 totale	ERQ2	9	VArh
+Energie réactive Q3 totale	ERQ3	9	VArh
+Energie réactive Q4 totale	ERQ4	9	VArh
+Courant efficace, phase 1	IRMS1	3	A
+Courant efficace, phase 2	IRMS2	3	A
+Courant efficace, phase 3	IRMS3	3	A
+Tension efficace, phase 1	URMS1	3	V
+Tension efficace, phase 2	URMS2	3	V
+Tension efficace, phase 3	URMS3	3	V
+Puissance app. de référence (PREF)	PREF	2	kVA
+Puissance app. de coupure (PCOUP)	PCOUP	2	kVA
+Puissance app. Instantanée soutirée	SINSTS	5	VA
+Puissance app. Instantanée soutirée phase 1	SINSTS1	5	VA
+Puissance app. instantanée soutirée phase 2	SINSTS2	5	VA
+Puissance app. instantanée soutirée phase 3	SINSTS3	5	VA
+Puissance app. max. soutirée n	SMAXSN	5	VA
+Puissance app. max. soutirée n phase 1	SMAXSN1	5	VA
+Puissance app. max. soutirée n phase 2	SMAXSN2	5	VA
+Puissance app. max. soutirée n phase 3	SMAXSN3	5	VA
+Puissance app max. soutirée n-1	SMAXSN-1	5	VA
+Puissance app max. soutirée n-1 phase 1	SMAXSN1-1	5	VA
+Puissance app max. soutirée n-1 phase 2	SMAXSN2-1	5	VA
+Puissance app max. soutirée n-1 phase 3	SMAXSN3-1	5	VA
+Puissance app. Instantanée injectée	SINSTI	5	VA
+Puissance app. max. injectée n	SMAXIN	5	VA
+Puissance app max. injectée n-1	SMAXIN-1	5	VA
+Point n de lAcourbe de charge active soutirée	CCASN	5	W
+Point n-1 de lAcourbe de charge active soutirée	CCASN-1	5	W
+Point n de lAcourbe de charge active injectée	CCAIN	5	W
+Point n-1 de lAcourbe de charge active injectée	CCAIN-1	5	W
+Tension moy. ph. 1	UMOY1	3	V
+Tension moy. ph. 2	UMOY2	3	V
+Tension moy. ph. 3	UMOY3	3	V
+Registre de Statuts	STGE	8	Sans
+Début Pointe Mobile 1	DPM1	2	Sans
+Fin Pointe Mobile 1	FPM1	2	Sans
+Début Pointe Mobile 2	DPM2	2	Sans
+Fin Pointe Mobile 2	FPM2	2	Sans
+Début Pointe Mobile 3	DPM3	2	Sans
+Fin Pointe Mobile 3	FPM3	2	Sans
+Message court	MSG1	32	Sans
+Message UltrAcourt	MSG2	16	Sans
+PRM	PRM	14	Sans
+Relais	RELAIS	3	Sans
+Numéro de l’index tarifaire en cours	NTARF	2	Sans
+Numéro du jour en cours calendrier fournisseur	NJOURF	2	Sans
+Numéro du prochain jour calendrier fournisseur	NJOURF+1	2	Sans
+Profil du prochain jour calendrier fournisseur	PJOURF+1	98	Sans
+Profil du prochain jour de pointe	PPOINTE	98	Sans
