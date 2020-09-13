@@ -165,7 +165,11 @@ def main():
                     numero_compteur = str(trame['ADSC'])
                     id_fabriquant = int(numero_compteur[2:4])
                     trame['OEM'] = liste_fabriquants[id_fabriquant]
-                    
+                   
+                    # ajout du CosPhi calculé
+                    if (trame["IRMS1"] and trame["URMS1"] and trame["SINSTS"]):
+                        trame["COSPHI"] = (trame["SINSTS"] / (trame["IRMS1"] * trame["URMS1"]))
+                    logging.debug(trame["COSPHI"])
                     # ajout timestamp pour debugger
                     trame["timestamp"] = int(time_measure)
 
